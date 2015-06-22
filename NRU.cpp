@@ -42,7 +42,7 @@ int getIdleFrameAddress()			//获取最近未使用的页框
 	int level = 3;
 	int retAddr = 0;
 	int tmpLevel;
-	for(int i=0; i<PHY_SIZE; i++)
+	for(int i=0; i<PHY_SIZE; i++)		//获取最低Level的页框
 	{
 		tmpLevel = getLevel(frameTable[i].M, frameTable[i].R);
 		if(tmpLevel < level)
