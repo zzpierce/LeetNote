@@ -1,4 +1,4 @@
-package p233_number_of_digit_one;
+package leetcode.p233_number_of_digit_one;
 
 /**
  * @author pierce

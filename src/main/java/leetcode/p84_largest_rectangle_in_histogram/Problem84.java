@@ -1,4 +1,4 @@
-package p84_largest_rectangle_in_histogram;
+package leetcode.p84_largest_rectangle_in_histogram;
 
 import java.util.Stack;
 

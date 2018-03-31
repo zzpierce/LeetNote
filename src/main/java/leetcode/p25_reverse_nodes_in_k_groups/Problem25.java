@@ -1,4 +1,4 @@
-package p25_reverse_nodes_in_k_groups;
+package leetcode.p25_reverse_nodes_in_k_groups;
 
 import java.util.Stack;
 
