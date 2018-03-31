@@ -1,4 +1,2 @@
 # PagingAlgorithms
-Imitating some paging management algorithms by c++
-
-Just write for fun
+Solutions of Leetcode problems written in Java (mostly)
