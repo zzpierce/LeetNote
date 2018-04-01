@@ -7,16 +7,15 @@ import java.util.*;
  */
 public class Problem140 {
     public static void main(String[] args) {
-        List<String> src = new ArrayList<>();
-        src.add("a");
-        src.add("aa");
-        src.add("aaa");
-        src.add("aaaa");
-        src.add("aaaaa");
+        List<String> list = new ArrayList<>();
+        list.add("a");
+        list.add("aa");
+        list.add("aaa");
 
         Solution s = new Solution();
-        List<String> ans = s.wordBreak("aaaaaa", src);
-        for (String str : ans) {
+        List<String> r = s.wordBreak("aaaaaaaaa", list);
+
+        for (String str :r ) {
             System.out.println(str);
         }
     }
@@ -24,122 +23,71 @@ public class Problem140 {
 
 class Solution {
 
+    private List<String>[] jump;
     private List<String> EMPTY = new ArrayList<>();
+    private Stack<String> printStack;
+    private List<String> result;
 
     public List<String> wordBreak(String s, List<String> wordDict) {
-
-        CTree cTree = new CTree();
-        for (String word : wordDict) {
-            cTree.addWord(word);
-        }
-
-        for (char c : s.toCharArray()) {
-            if (!cTree.cs.contains(c)) {
-                return EMPTY;
-            }
-        }
-
-        List<String> ans = getStr(s, 0, cTree);
-
-        return ans;
-
-    }
-
-    private List<String> getStr(String s, int p, CTree tree) {
-
-        if (p >= s.length()) return EMPTY;
-
-        Node np = tree.root;
-        List<String> list = new ArrayList<>();
-
-        int p2 = p;
-        while (p2 < s.length()) {
-            char c = s.charAt(p2);
-
-            if (np.next == null || !np.next.containsKey(c)) {
-                return list;
-            }
-
-            np = np.next.get(c);
-            if (np.end) {
-                String prefix = s.substring(p, p2 + 1);
-
-                if (p2 == s.length() - 1) {
-                    list.add(prefix);
-                    break;
-                }
-
-                List<String> tmp = getStr(s, p2 + 1, tree);
-                for (String ts : tmp) {
-                    list.add(prefix + " " + ts);
+        //init jump array
+        int len = s.length();
+        jump = new ArrayList[len];
+        jump[0] = new ArrayList<>();
+        boolean valid = false;
+        for (int i = 0; i < len; i ++) {
+            if (jump[i] != null) {
+                for (String word : wordDict) {
+                    int wlen = word.length();
+                    if (i + wlen <= len) {
+                        if (s.substring(i, i + wlen).equals(word)) {
+                            jump[i].add(word);
+                            if (i + wlen == len) {
+                                valid = true;
+                            } else {
+                                if (jump[i + wlen] == null) {
+                                    jump[i + wlen] = new ArrayList<>();
+                                }
+                            }
+                        }
+                    }
                 }
             }
-
-            p2 ++;
         }
 
-        return list;
+        if (!valid) {
+            return EMPTY;
+        }
+        printStack = new Stack<>();
+        result = new ArrayList<>();
+
+        //print
+        dfs(0, s);
+
+        return result;
     }
 
-
-}
-
-class CTree {
-
-    Set<Character> cs;
-    Node root;
-
-    public CTree() {
-        root = new Node('R', false);
-        cs = new HashSet<>();
-    }
-
-    public void addWord(String word) {
-
-        int l = word.length();
-        Node np = root;
-        boolean end = false;
-
-        for (int i = 0; i < l; i ++) {
-            if (i == l - 1) end = true;
-
-            char c = word.charAt(i);
-            if (!cs.contains(c)) {
-                cs.add(c);
+    private void dfs(int index, String s) {
+        if (jump[index] != null) {
+            for (String str : jump[index]) {
+                if (index + str.length() == s.length()) {
+                    addToList(str);
+                } else {
+                    printStack.push(str);
+                    dfs(index + str.length(), s);
+                    printStack.pop();
+                }
             }
-            if (np.next == null || !np.next.containsKey(c)) {
-                np.addNext(c, end);
-            } else if (end) {
-                np.addEnd(c);
-            }
-            np = np.next.get(c);
         }
     }
 
-}
-
-class Node {
-
-    char c;
-    boolean end;
-    Map<Character, Node> next;
-
-    public Node(char c, boolean end) {
-        this.c = c;
-        this.end = end;
-    }
-
-
-    public void addNext(char c, boolean end) {
-        if (next == null) next = new HashMap<>();
-
-        Node newNode = new Node(c, end);
-        next.put(c, newNode);
-    }
-
-    public void addEnd(char c) {
-        Node n = next.get(c);
-        n.end = true;
+    private void addToList(String s) {
+        StringBuilder b = new StringBuilder();
+        for (String str : printStack) {
+            b.append(str).append(" ");
+        }
+        b.append(s);
+        result.add(b.toString());
     }
 
 }
+
