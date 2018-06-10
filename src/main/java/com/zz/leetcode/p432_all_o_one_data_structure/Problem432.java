@@ -1,4 +1,4 @@
-package leetcode.p432_all_o_one_data_structure;
+package com.zz.leetcode.p432_all_o_one_data_structure;
 
 import java.util.*;
 

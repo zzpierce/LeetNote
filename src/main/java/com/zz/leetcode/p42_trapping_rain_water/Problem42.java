@@ -1,4 +1,4 @@
-package leetcode.p42_trapping_rain_water;
+package com.zz.leetcode.p42_trapping_rain_water;
 
 /**
  * @author pierce

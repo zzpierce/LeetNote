@@ -1,6 +1,4 @@
-package leetcode.p212_word_search_II;
-
-import javafx.collections.transformation.SortedList;
+package com.zz.leetcode.p212_word_search_II;
 
 import java.util.*;
 

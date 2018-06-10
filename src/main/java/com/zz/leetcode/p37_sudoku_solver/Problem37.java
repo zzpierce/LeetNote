@@ -1,9 +1,7 @@
-package leetcode.p37_sudoku_solver;
+package com.zz.leetcode.p37_sudoku_solver;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.Set;
 
 /**
  * @author pierce

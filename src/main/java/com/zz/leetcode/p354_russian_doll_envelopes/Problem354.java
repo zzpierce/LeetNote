@@ -1,4 +1,4 @@
-package leetcode.p354_russian_doll_envelopes;
+package com.zz.leetcode.p354_russian_doll_envelopes;
 
 import java.util.*;
 

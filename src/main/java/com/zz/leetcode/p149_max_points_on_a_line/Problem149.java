@@ -1,6 +1,4 @@
-package leetcode.p149_max_points_on_a_line;
-
-import java.awt.*;
+package com.zz.leetcode.p149_max_points_on_a_line;
 
 /**
  * @author pierce

@@ -1,4 +1,4 @@
-package leetcode.p140_word_break_II;
+package com.zz.leetcode.p140_word_break_II;
 
 import java.util.*;
 
