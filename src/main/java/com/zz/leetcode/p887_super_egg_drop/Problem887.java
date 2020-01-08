@@ -14,5 +14,6 @@ public class Problem887 {
 class Solution {
     public int superEggDrop(int K, int N) {
         //todo
+        return 0;
     }
 }
