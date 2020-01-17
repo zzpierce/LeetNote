@@ -2,7 +2,6 @@ package com.zz.leetcode.p301_remove_invalid_parentheses;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Stack;
 
 /**
  * Remove the minimum number of invalid parentheses in order to make the input string valid. Return all possible results.
@@ -31,7 +30,6 @@ public class Problem301 {
 class Solution {
 
     private List<String> valid;
-
 
     public List<String> removeInvalidParentheses(String s) {
         valid = new ArrayList<>();
