@@ -1,8 +1,11 @@
-package com.zz.leetcode.p749_contain_virus;
+package com.zz.leetcode.problem.p749_contain_virus;
 
 import com.zz.util.ReadUtil;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 /**
  * A virus is spreading rapidly, and your task is to quarantine the infected area by installing walls.
