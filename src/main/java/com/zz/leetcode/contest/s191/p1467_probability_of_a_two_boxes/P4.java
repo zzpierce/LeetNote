@@ -1,4 +1,4 @@
-package com.zz.leetcode.contest.s191.p4;
+package com.zz.leetcode.contest.s191.p1467_probability_of_a_two_boxes;
 
 /**
  * @author pierce

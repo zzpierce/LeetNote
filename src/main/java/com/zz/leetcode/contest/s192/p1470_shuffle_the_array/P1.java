@@ -1,4 +1,4 @@
-package com.zz.leetcode.contest.s192.p1;
+package com.zz.leetcode.contest.s192.p1470_shuffle_the_array;
 
 /**
  * @author pierce

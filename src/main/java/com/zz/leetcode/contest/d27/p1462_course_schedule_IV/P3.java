@@ -1,4 +1,4 @@
-package com.zz.leetcode.contest.d27.p3;
+package com.zz.leetcode.contest.d27.p1462_course_schedule_IV;
 
 import com.zz.util.ReadUtil;
 

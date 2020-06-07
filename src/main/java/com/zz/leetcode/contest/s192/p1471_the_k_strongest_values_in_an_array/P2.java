@@ -1,4 +1,4 @@
-package com.zz.leetcode.contest.s192.p2;
+package com.zz.leetcode.contest.s192.p1471_the_k_strongest_values_in_an_array;
 
 import java.util.ArrayList;
 import java.util.Arrays;

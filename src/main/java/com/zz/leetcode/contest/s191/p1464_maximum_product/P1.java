@@ -1,4 +1,4 @@
-package com.zz.leetcode.contest.s191.p1;
+package com.zz.leetcode.contest.s191.p1464_maximum_product;
 
 /**
  * @author pierce

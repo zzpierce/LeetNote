@@ -1,4 +1,4 @@
-package com.zz.leetcode.contest.s192.p3;
+package com.zz.leetcode.contest.s192.p1472_design_browser_history;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.zz.leetcode.contest.d27.p1;
+package com.zz.leetcode.contest.d27.p1460_make_two_array_equal;
 
 import java.util.Arrays;
 
