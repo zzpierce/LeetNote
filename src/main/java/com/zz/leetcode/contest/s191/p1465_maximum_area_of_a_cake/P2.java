@@ -1,4 +1,4 @@
-package com.zz.leetcode.contest.s191.p2;
+package com.zz.leetcode.contest.s191.p1465_maximum_area_of_a_cake;
 
 import java.util.Arrays;
 

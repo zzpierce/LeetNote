@@ -1,4 +1,4 @@
-package com.zz.leetcode.contest.d27.p2;
+package com.zz.leetcode.contest.d27.p1461_check_if_string_contain;
 
 import java.util.HashSet;
 import java.util.Set;

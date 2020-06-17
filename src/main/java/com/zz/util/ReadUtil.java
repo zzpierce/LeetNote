@@ -26,4 +26,15 @@ public class ReadUtil {
         return g;
     }
 
+    public static int[] readArray(String s) {
+        JSONArray array = JSON.parseArray(s);
+        int[] g = new int[array.size()];
+        int i = 0;
+        for (Object a : array) {
+            g[i] = (int)a;
+            i ++;
+        }
+        return g;
+    }
+
 }
