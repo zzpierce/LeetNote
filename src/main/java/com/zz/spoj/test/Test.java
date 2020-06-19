@@ -1,8 +1,8 @@
-package com.zz.spoj.p1_the_universe;
+package com.zz.spoj.test;
 
 import java.util.Scanner;
 
-public class SP1 {
+public class Test {
 }
 
 class Main

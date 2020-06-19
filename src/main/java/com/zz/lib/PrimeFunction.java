@@ -8,6 +8,9 @@ import java.util.List;
  */
 public class PrimeFunction {
 
+    /**
+     * return prime less than r
+     */
     public static List<Integer> primeLess(int r) {
         int[] p = new int[r + 1];
         List<Integer> prime = new ArrayList<>();

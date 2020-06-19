@@ -1,11 +1,11 @@
-package com.zz.spoj.p2_prime_generator;
+package com.zz.spoj.prime1;
 
 import com.zz.lib.PrimeFunction;
 
 import java.util.List;
 import java.util.Scanner;
 
-public class SP2 {
+public class Prime1 {
 }
 
 class Main {

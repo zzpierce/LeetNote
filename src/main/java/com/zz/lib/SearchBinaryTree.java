@@ -53,24 +53,25 @@ public class SearchBinaryTree<E> {
         return (Integer)e1 > (Integer)e2 ? 1 : 0;
     }
 
-    public static void main(String[] args) {
-        SearchBinaryTree<Integer> tree = new SearchBinaryTree<>();
-        for (int i = 0; i < 100; i ++) {
-            tree.insert((int)(Math.random() * 1000));
+//    public static void main(String[] args) {
+//        SearchBinaryTree<Integer> tree = new SearchBinaryTree<>();
+//        for (int i = 0; i < 100; i ++) {
+//            tree.insert((int)(Math.random() * 1000));
+//        }
+//        tree.preOrderTraversal();
+//    }
+
+    static class TreeNode<E> {
+
+        TreeNode(E e) {
+            value = e;
         }
-        tree.preOrderTraversal();
+
+        TreeNode<E> left;
+        TreeNode<E> right;
+
+        E value;
     }
 
 }
 
-class TreeNode<E> {
-
-    TreeNode(E e) {
-        value = e;
-    }
-
-    TreeNode<E> left;
-    TreeNode<E> right;
-
-    E value;
-}
