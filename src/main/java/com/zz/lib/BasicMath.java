@@ -13,8 +13,11 @@ public class BasicMath {
         return p;
     }
 
-//    public static void main(String[] args) {
-//        System.out.println(BasicMath.binPow(2, 5, 10000));
-//    }
+    public static int gcd (int a, int b) {
+        if (b == 0)
+            return a;
+        else
+            return gcd (b, a % b);
+    }
 
 }

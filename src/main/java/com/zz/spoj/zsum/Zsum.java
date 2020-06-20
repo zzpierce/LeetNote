@@ -1,47 +1,35 @@
-package com.zz.spoj.locker;
+package com.zz.spoj.zsum;
 
 import com.zz.lib.BasicMath;
 
 import java.io.*;
-import java.util.Scanner;
 import java.util.StringTokenizer;
 
-public class Locker {
+/**
+ * @author pierce
+ */
+public class Zsum {
 }
 
-/**
- * TLE
- */
 class Main {
+
     public static void main(String[] args) {
-        int M = 1000000007;
+        int M = 10000007;
         FastScanner scanner = new FastScanner();
-        int t = scanner.nextInt();
-        while (t -- > 0) {
-            long r = scanner.nextLong();
-            if (r == 1) {
-                System.out.println(1);
-                continue;
-            }
-            long m = r % 3;
-            long ans = 0;
-            if (m == 1) {
-                ans = binPow(3, r / 3 - 1, M);
-                ans = (ans * 4) % M;
-            }
-            if (m == 0) {
-                ans = binPow(3, r / 3, M);
-            }
-            if (m == 2) {
-                ans = binPow( 3, r / 3, M);
-                ans = (ans * 2) % M;
-            }
+        while (true) {
+            int n = scanner.nextInt();
+            int k = scanner.nextInt();
+            if (n == k && n == 0) break;
+            long p1 = binPow(n, k, M);
+            long p2 = binPow(n - 1, k, M);
+            long p3 = binPow(n, n, M);
+            long p4 = binPow(n - 1, n - 1, M);
+            long ans = (p1 + 2 * p2 + p3 + 2 * p4) % M;
             System.out.println(ans);
         }
     }
 
-    public static long binPow(int a, long b, int m) {
-        b = b % (m - 1);
+    public static long binPow(int a, int b, int m) {
         long p = 1L;
         long e = a;
         while (b > 0) {
